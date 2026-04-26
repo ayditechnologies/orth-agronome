@@ -6,14 +6,14 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="ORTH · Product Naming Strategy" />
-  <meta property="og:description" content="Seven tiers, one stack. Two naming directions for review: Identity-led with Agronomist as the destination, or Field-led with one repeated word and modifier ladder." />
+  <meta property="og:description" content="Seven tiers, one stack. One word does the family work. Plus, Pro, Expert do the laddering. Field, Field Plus, Field Pro, Field Expert. Teams runs in parallel." />
   <meta property="og:image" content="https://orth-agronome.vercel.app/orth-agronome-thumb.jpg" />
   <meta property="og:type" content="website" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ORTH · Product Naming Strategy" />
-  <meta name="twitter:description" content="Seven tiers, one stack. Two naming directions for review: Identity-led with Agronomist as the destination, or Field-led with one repeated word and modifier ladder." />
+  <meta name="twitter:description" content="Seven tiers, one stack. One word does the family work. Plus, Pro, Expert do the laddering. Field, Field Plus, Field Pro, Field Expert. Teams runs in parallel." />
   <meta name="twitter:image" content="https://orth-agronome.vercel.app/orth-agronome-thumb.jpg" />
 
   <title>ORTH · Product Naming Strategy</title>
@@ -244,6 +244,19 @@
       background: var(--pill-bg);
       border-radius: 100px;
       padding: 4px;
+    }
+
+    /* Locked direction pill - looks like the active state of a toggle, no interaction */
+    .tab-switch-locked .tab-locked-pill {
+      background: var(--surface);
+      color: var(--ink-1);
+      border-radius: 100px;
+      padding: 9px 24px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: var(--font-body);
+      white-space: nowrap;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     }
 
     .tab-pill {
@@ -852,7 +865,7 @@
     }
   </style>
 </head>
-<body>
+<body class="style-system">
 
 <div class="mobile-block">
   <div class="mobile-block-title">Built for<br>larger screens.</div>
@@ -884,15 +897,13 @@
       <button class="tab-opt active" data-tab="individual">Individual</button>
       <button class="tab-opt" data-tab="teams">Teams</button>
     </div>
-    <div class="tab-switch" id="approachSwitch">
-      <div class="tab-pill" id="approachPill"></div>
-      <button class="tab-opt active" data-approach="identity">Identity</button>
-      <button class="tab-opt" data-approach="field">Field</button>
+    <div class="tab-switch tab-switch-locked">
+      <div class="tab-locked-pill">Direction Field</div>
     </div>
     <div class="tab-switch" id="styleSwitch">
       <div class="tab-pill" id="stylePill"></div>
-      <button class="tab-opt active" data-style="editorial">Human</button>
-      <button class="tab-opt" data-style="system">Techy</button>
+      <button class="tab-opt active" data-style="system">Techy</button>
+      <button class="tab-opt" data-style="editorial">Human</button>
     </div>
     <div class="tab-switch" id="themeSwitch">
       <div class="tab-pill" id="themePill"></div>
@@ -1002,7 +1013,7 @@
       <div class="card">
         <div class="card-title-row">
           <img class="tier-icon tier-icon-sm" src="https://raw.githubusercontent.com/ayditechnologies/orth-agronome/main/Field%20Pro.png" alt="Teams" />
-          <div class="card-title" data-name-identity="Teams" data-name-field="Teams Field">Teams</div>
+          <div class="card-title" data-name-identity="Teams" data-name-field="Field Teams">Teams</div>
         </div>
         <div class="card-who" data-text-identity="For farms that work as a team from the ground up." data-text-field="For farms that work as a team from the ground up.">For farms that work as a team from the ground up.</div>
         <div class="card-price-row"><span class="card-price">$30</span><span class="card-per">/ seat / month</span></div>
@@ -1023,14 +1034,14 @@
       <div class="card">
         <div class="card-title-row">
           <img class="tier-icon tier-icon-lg" src="https://raw.githubusercontent.com/ayditechnologies/orth-agronome/main/Agronomist.png" alt="Teams Agronomist" />
-          <div class="card-title" data-name-identity="Teams Agronomist" data-html-field='Teams Field<span class="pro-spacer"> </span><span class="pro-suffix">Pro</span>'>Teams Agronomist</div>
+          <div class="card-title" data-name-identity="Teams Agronomist" data-html-field='Field Teams<span class="pro-spacer"> </span><span class="pro-suffix">Pro</span>'>Teams Agronomist</div>
         </div>
         <div class="card-who" data-text-identity="For operations running real agronomic practice across a crew." data-text-field="For operations that run their practice across a crew.">For operations running real agronomic practice across a crew.</div>
         <div class="card-price-row"><span class="card-price">$90</span><span class="card-per">/ seat / month</span></div>
         <div class="card-billing">Billed per seat, annually</div>
         <a href="#" class="card-cta" onclick="return false;">Get started</a>
         <div class="card-divider"></div>
-        <div class="card-feature-head" data-text-identity="Everything in Teams, plus" data-text-field="Everything in Teams Field, plus">Everything in Teams, plus</div>
+        <div class="card-feature-head" data-text-identity="Everything in Teams, plus" data-text-field="Everything in Field Teams, plus">Everything in Teams, plus</div>
         <div class="card-features">
           <div class="card-feature"><i class="iconoir-check"></i>Satellite diagnostics per seat</div>
           <div class="card-feature"><i class="iconoir-check"></i>Deeper reasoning per seat</div>
@@ -1044,14 +1055,14 @@
       <div class="card">
         <div class="card-title-row">
           <img class="tier-icon" src="https://raw.githubusercontent.com/ayditechnologies/orth-agronome/main/Agronomist%20Pro.png" alt="Teams Agronomist Pro" />
-          <div class="card-title" data-html-identity='Teams Agronomist<span class="pro-spacer"> </span><span class="pro-suffix">Pro</span>' data-html-field='Teams Field<span class="pro-spacer"> </span><span class="pro-suffix">Expert</span>'>Teams Agronomist<span class="pro-spacer"> </span><span class="pro-suffix">Pro</span></div>
+          <div class="card-title" data-html-identity='Teams Agronomist<span class="pro-spacer"> </span><span class="pro-suffix">Pro</span>' data-html-field='Field Teams<span class="pro-spacer"> </span><span class="pro-suffix">Expert</span>'>Teams Agronomist<span class="pro-spacer"> </span><span class="pro-suffix">Pro</span></div>
         </div>
         <div class="card-who" data-text-identity="For agribusinesses and institutional operations." data-text-field="For agribusinesses and institutional operations.">For agribusinesses and institutional operations.</div>
         <div class="card-price-row"><span class="card-price">$300</span><span class="card-per">/ seat / month</span></div>
         <div class="card-billing">Billed per seat, annually</div>
         <a href="#" class="card-cta" onclick="return false;">Contact sales</a>
         <div class="card-divider"></div>
-        <div class="card-feature-head" data-text-identity="Everything in Teams Agronomist, plus" data-text-field="Everything in Teams Field Pro, plus">Everything in Teams Agronomist, plus</div>
+        <div class="card-feature-head" data-text-identity="Everything in Teams Agronomist, plus" data-text-field="Everything in Field Teams Pro, plus">Everything in Teams Agronomist, plus</div>
         <div class="card-features">
           <div class="card-feature"><i class="iconoir-check"></i>Full intelligence per seat</div>
           <div class="card-feature"><i class="iconoir-check"></i>SSO and SAML</div>
@@ -1097,17 +1108,17 @@
       <div class="messaging-description" data-text-identity="The most serious practitioners managing at scale." data-text-field="The most serious practitioners managing at scale.">The most serious practitioners managing at scale.</div>
     </div>
     <div class="messaging-row">
-      <div class="messaging-tier" data-name-identity="Teams" data-name-field="Teams Field">Teams</div>
+      <div class="messaging-tier" data-name-identity="Teams" data-name-field="Field Teams">Teams</div>
       <div class="messaging-slogan" data-text-identity="The crew, in one field." data-text-field="One field, every seat.">The crew, in one field.</div>
       <div class="messaging-description" data-text-identity="Farms that work as a team from the ground up." data-text-field="Farms that work as a team from the ground up.">Farms that work as a team from the ground up.</div>
     </div>
     <div class="messaging-row">
-      <div class="messaging-tier" data-name-identity="Teams Agronomist" data-name-field="Teams Field Pro">Teams Agronomist</div>
+      <div class="messaging-tier" data-name-identity="Teams Agronomist" data-name-field="Field Teams Pro">Teams Agronomist</div>
       <div class="messaging-slogan" data-text-identity="A practice across a crew." data-text-field="The field, shared and read.">A practice across a crew.</div>
       <div class="messaging-description" data-text-identity="Operations running real agronomic practice across a crew." data-text-field="Operations that run their practice across a crew.">Operations running real agronomic practice across a crew.</div>
     </div>
     <div class="messaging-row">
-      <div class="messaging-tier" data-name-identity="Teams Agronomist Pro" data-name-field="Teams Field Expert">Teams Agronomist Pro</div>
+      <div class="messaging-tier" data-name-identity="Teams Agronomist Pro" data-name-field="Field Teams Expert">Teams Agronomist Pro</div>
       <div class="messaging-slogan" data-text-identity="The full practice, shared." data-text-field="The whole field, every angle.">The full practice, shared.</div>
       <div class="messaging-description" data-text-identity="Agribusinesses and institutional operations." data-text-field="Agribusinesses and institutional operations.">Agribusinesses and institutional operations.</div>
     </div>
@@ -1138,7 +1149,7 @@
       <div class="layer-name">Adaptive</div>
       <div class="layer-tagline">Research-grade analysis, tuned to the question.</div>
       <div class="layer-desc">The mode that adjusts its depth to the weight of the ask. Research grade when the question demands it.</div>
-      <div class="layer-avail" data-text-identity="Agronomist Pro &middot; Teams Agronomist Pro" data-text-field="Field Expert &middot; Teams Field Expert">Agronomist Pro &middot; Teams Agronomist Pro</div>
+      <div class="layer-avail" data-text-identity="Agronomist Pro &middot; Teams Agronomist Pro" data-text-field="Field Expert &middot; Field Teams Expert">Agronomist Pro &middot; Teams Agronomist Pro</div>
     </div>
   </div>
 </section>
@@ -1165,9 +1176,9 @@
       <div class="compare-cell"><span class="head-name" data-name-identity="Field Pro" data-name-field="Field Plus">Field Pro</span><span class="head-sub">$14 / mo</span></div>
       <div class="compare-cell"><span class="head-name" data-name-identity="Agronomist" data-name-field="Field Pro">Agronomist</span><span class="head-sub">$60 / mo</span></div>
       <div class="compare-cell"><span class="head-name" data-name-identity="Agronomist Pro" data-name-field="Field Expert">Agronomist Pro</span><span class="head-sub">$200 / mo</span></div>
-      <div class="compare-cell"><span class="head-name" data-name-identity="Teams" data-name-field="Teams Field">Teams</span><span class="head-sub">$30 / seat</span></div>
-      <div class="compare-cell"><span class="head-name" data-name-identity="Teams Agronomist" data-name-field="Teams Field Pro">Teams Agronomist</span><span class="head-sub">$90 / seat</span></div>
-      <div class="compare-cell"><span class="head-name" data-name-identity="Teams Agronomist Pro" data-name-field="Teams Field Expert">Teams Agronomist Pro</span><span class="head-sub">$300 / seat</span></div>
+      <div class="compare-cell"><span class="head-name" data-name-identity="Teams" data-name-field="Field Teams">Teams</span><span class="head-sub">$30 / seat</span></div>
+      <div class="compare-cell"><span class="head-name" data-name-identity="Teams Agronomist" data-name-field="Field Teams Pro">Teams Agronomist</span><span class="head-sub">$90 / seat</span></div>
+      <div class="compare-cell"><span class="head-name" data-name-identity="Teams Agronomist Pro" data-name-field="Field Teams Expert">Teams Agronomist Pro</span><span class="head-sub">$300 / seat</span></div>
     </div>
 
     <div class="compare-cat">Intelligence</div>
@@ -1375,7 +1386,7 @@
 
     <div class="logic-item">
       <div class="logic-title" data-text-identity="Teams mirrors the individual ladder." data-text-field="Teams mirrors the individual ladder.">Teams mirrors the individual ladder.</div>
-      <div class="logic-body" data-text-identity="Teams begins where the crew starts working the field together, with a parallel ascent: Teams, Teams Agronomist, Teams Agronomist Pro. Same destination, applied across a roster. The shared version of ORTH is not a separate hierarchy. It is the same hierarchy, multiplied by seats." data-text-field="Teams Field, Teams Field Pro, Teams Field Expert. Same rhythm as the individual ladder, applied across a roster. The shared version of ORTH is not a separate hierarchy. It is the same hierarchy, multiplied by seats.">Teams begins where the crew starts working the field together, with a parallel ascent: Teams, Teams Agronomist, Teams Agronomist Pro. Same destination, applied across a roster. The shared version of ORTH is not a separate hierarchy. It is the same hierarchy, multiplied by seats.</div>
+      <div class="logic-body" data-text-identity="Teams begins where the crew starts working the field together, with a parallel ascent: Teams, Teams Agronomist, Teams Agronomist Pro. Same destination, applied across a roster. The shared version of ORTH is not a separate hierarchy. It is the same hierarchy, multiplied by seats." data-text-field="Field Teams, Field Teams Pro, Field Teams Expert. Same rhythm as the individual ladder, applied across a roster. The shared version of ORTH is not a separate hierarchy. It is the same hierarchy, multiplied by seats.">Teams begins where the crew starts working the field together, with a parallel ascent: Teams, Teams Agronomist, Teams Agronomist Pro. Same destination, applied across a roster. The shared version of ORTH is not a separate hierarchy. It is the same hierarchy, multiplied by seats.</div>
     </div>
 
     <div class="logic-item">
@@ -1426,46 +1437,24 @@
     tab.addEventListener('click', () => setTab(tab));
   });
 
-  /* ── Approach switcher (Identity / Field) ── */
-  const approachSwitch = document.getElementById('approachSwitch');
-  const approachPill   = document.getElementById('approachPill');
-
-  function syncApproachPill(el) {
-    if (!approachSwitch || !el) return;
-    const sr = approachSwitch.getBoundingClientRect();
-    const er = el.getBoundingClientRect();
-    approachPill.style.left  = (er.left - sr.left) + 'px';
-    approachPill.style.width = er.width + 'px';
-  }
-
+  /* ── Direction is locked to Field. applyApproach() runs once on load
+        to populate Field-mode content from data-*-field attributes.
+        Identity-mode data attributes are kept for revertability. ── */
   function applyApproach(target) {
-    /* Plain text (no HTML) — tier names without Pro suffix */
     document.querySelectorAll('[data-name-identity]').forEach(el => {
       const next = target === 'field' ? el.dataset.nameField : el.dataset.nameIdentity;
       if (next !== undefined) el.textContent = next;
     });
-    /* Plain text (no HTML) — feature heads, layer avail */
     document.querySelectorAll('[data-text-identity]').forEach(el => {
       const next = target === 'field' ? el.dataset.textField : el.dataset.textIdentity;
       if (next !== undefined) el.innerHTML = next;
     });
-    /* HTML strings — tier names with Pro suffix span */
     document.querySelectorAll('[data-html-identity], [data-html-field]').forEach(el => {
       const next = target === 'field' ? el.dataset.htmlField : el.dataset.htmlIdentity;
       if (next !== undefined) el.innerHTML = next;
     });
   }
-
-  function setApproach(el) {
-    document.querySelectorAll('#approachSwitch .tab-opt').forEach(t => t.classList.remove('active'));
-    el.classList.add('active');
-    syncApproachPill(el);
-    applyApproach(el.dataset.approach);
-  }
-
-  document.querySelectorAll('#approachSwitch .tab-opt').forEach(tab => {
-    tab.addEventListener('click', () => setApproach(tab));
-  });
+  applyApproach('field');
 
   /* ── Style switcher (Human / Techy) ── */
   const styleSwitch = document.getElementById('styleSwitch');
@@ -1519,8 +1508,6 @@
   window.addEventListener('load', () => {
     const tabActive = document.querySelector('#tabSwitch .tab-opt.active');
     if (tabActive) syncPill(tabActive);
-    const approachActive = document.querySelector('#approachSwitch .tab-opt.active');
-    if (approachActive) syncApproachPill(approachActive);
     const styleActive = document.querySelector('#styleSwitch .tab-opt.active');
     if (styleActive) syncStylePill(styleActive);
     const themeActive = document.querySelector('#themeSwitch .tab-opt.active');
@@ -1529,8 +1516,6 @@
   window.addEventListener('resize', () => {
     const tabActive = document.querySelector('#tabSwitch .tab-opt.active');
     if (tabActive) syncPill(tabActive);
-    const approachActive = document.querySelector('#approachSwitch .tab-opt.active');
-    if (approachActive) syncApproachPill(approachActive);
     const styleActive = document.querySelector('#styleSwitch .tab-opt.active');
     if (styleActive) syncStylePill(styleActive);
     const themeActive = document.querySelector('#themeSwitch .tab-opt.active');
